@@ -3,7 +3,7 @@
 A simple self-hosted link shortener Next.js application. Provide these environment variables:
 
 ```env
-VERCEL_URL=https://link.ly
+HOSTNAME=https://link.ly
 API_USER=xxxxxxxxxx
 API_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 DATABASE_URL=postgres://username:password@hostname:5432/database
