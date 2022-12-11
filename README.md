@@ -6,7 +6,7 @@ A simple self-hosted link shortener Next.js application. Provide these environme
 VERCEL_URL=https://link.ly
 API_USER=xxxxxxxxxx
 API_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-DATABASE_URL=postgres://...
+DATABASE_URL=postgres://username:password@hostname:5432/database
 ```
 
 Hit `/api/link` with a `POST` request:
