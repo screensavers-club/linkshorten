@@ -44,6 +44,17 @@ export default async function handler(
           }
         }
 
+        // then check if target already exists
+        const existingLink = await prisma.link.findFirst({
+          where: { target: { equals: target as string } },
+        });
+
+        if (existingLink) {
+          return res
+            .status(200)
+            .json({ url: `${process.env.VERCEL_URL}/${existingLink.slug}` });
+        }
+
         // here we can assume desiredSlug is unique already
         const newLink = await prisma.link.create({
           data: {

@@ -31,3 +31,5 @@ You will receive a short URL back:
   "url": "https://link.ly/<slug>"
 }
 ```
+
+If you attempt to create a short link with a target that already exists in the database, the response will be the same short link and not a newly generated shortlink.
