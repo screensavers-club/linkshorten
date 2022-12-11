@@ -52,7 +52,7 @@ export default async function handler(
         if (existingLink) {
           return res
             .status(200)
-            .json({ url: `${process.env.VERCEL_URL}/${existingLink.slug}` });
+            .json({ url: `${process.env.HOSTNAME}/${existingLink.slug}` });
         }
 
         // here we can assume desiredSlug is unique already
@@ -64,7 +64,7 @@ export default async function handler(
         });
 
         if (newLink) {
-          const url = `${process.env.VERCEL_URL}/${desiredSlug}`;
+          const url = `${process.env.HOSTNAME}/${desiredSlug}`;
           res.status(200).json({ url });
         } else {
           throw new Error("failed to create link");
