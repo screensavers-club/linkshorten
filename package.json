@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma migrate deploy; prisma generate;"
+    "postinstall": "prisma migrate deploy && prisma generate",
+    "prestart": "pnpm generate"
   },
   "dependencies": {
-    "@prisma/client": "4.7.1",
+    "@prisma/client": "^4.7.1",
     "nanoid": "3.3.4",
     "next": "13.0.6",
     "react": "18.2.0",
