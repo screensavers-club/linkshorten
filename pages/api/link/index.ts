@@ -65,17 +65,17 @@ export default async function handler(
 
         if (newLink) {
           const url = `${process.env.HOSTNAME}/${desiredSlug}`;
-          res.status(200).json({ url });
+          return res.status(200).json({ url });
         } else {
           throw new Error("failed to create link");
         }
       } catch (err: any) {
-        res.status(500).json({ error: err });
+        return res.status(500).json({ error: err });
       }
 
       return;
 
     default:
-      res.status(404).json({ error: "Not found" });
+      return res.status(404).json({ error: "Not found" });
   }
 }
